@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { Link } from "react-router-dom";
+import { Link, BrowserRouter } from "react-router-dom";
 
 class LevelPage extends PureComponent {
   constructor(props) {
@@ -26,6 +26,7 @@ class LevelPage extends PureComponent {
           >
             <button>EASY</button>
           </Link>
+
           <Link
             to={{
               pathname: "/game",

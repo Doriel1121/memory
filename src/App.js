@@ -14,7 +14,7 @@ class App extends PureComponent {
   render() {
     return (
       <div id="App">
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
           <Switch>
             <Route exact path="/" component={LevelPage}></Route>
 
