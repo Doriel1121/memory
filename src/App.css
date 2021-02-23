@@ -35,10 +35,12 @@ h2 {
 
 .difficulty {
   text-align: center;
-  width: 400px;
   height: 240px;
-  background-color: #aaebeb;
+  background-color: #00ff777e;
   box-shadow: 1px 1px 80px 3px rgb(202, 201, 201);
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 .mainDiv {
