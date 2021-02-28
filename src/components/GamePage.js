@@ -6,6 +6,8 @@ import Timer from "react-compound-timer";
 import { Modal, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
+import Confetti from "react-confetti";
+
 class GamePage extends PureComponent {
   constructor(props) {
     super(props);
@@ -101,14 +103,25 @@ class GamePage extends PureComponent {
     console.log(this.state.counter);
     return (
       <div>
+        {this.state.trigger ? (
+          <Confetti width={window.innerWidth} height={window.innerHeight} />
+        ) : null}
+
         <Modal show={this.state.trigger} onHide={this.handleClose}>
-          <Modal.Header closeButton>
+          <Modal.Header
+            style={{
+              backgroundColor: "#f9ffc0",
+            }}
+            closeButton
+          >
             <Modal.Title>Great job</Modal.Title>
           </Modal.Header>
-          <Modal.Body>
+          <Modal.Body style={{ backgroundColor: "#d0ffb6" }}>
             Woohoo, you have finished the game. Let's have another one
           </Modal.Body>
-          <Modal.Footer>
+          <Modal.Footer
+            style={{ backgroundColor: "#f9ffc0", justifyContent: "center" }}
+          >
             <Button variant="secondary" onClick={this.handleClose}>
               <Link style={{ textDecoration: "none", color: "white" }} to="/">
                 Play
