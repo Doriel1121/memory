@@ -70,6 +70,7 @@ h2 {
 }
 
 .card-face {
+  border-radius: 10px;
   position: absolute;
   height: 100%;
   width: 100%;
@@ -213,8 +214,8 @@ h2 {
   }
 
   .image {
-    width: 70px;
-    height: 70px;
+    width: 65px;
+    height: 65px;
   }
 
   .scene {
