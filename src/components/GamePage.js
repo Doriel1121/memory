@@ -3,7 +3,9 @@ import React, { PureComponent } from "react";
 import Card from "./Card";
 import $ from "jquery";
 import Timer from "react-compound-timer";
-
+import { Modal, Button } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Link } from "react-router-dom";
 class GamePage extends PureComponent {
   constructor(props) {
     super(props);
@@ -35,6 +37,7 @@ class GamePage extends PureComponent {
       tempCard: "",
       tempId: "",
       counter: 0,
+      trigger: false,
     };
   }
 
@@ -75,7 +78,7 @@ class GamePage extends PureComponent {
     } else if (card === this.state.tempCard) {
       counter++;
       if (counter === this.props.location.state.amount) {
-        alert("Yoy have greate memory");
+        this.setState({ trigger: true });
       }
       this.setState({ tempCard: "", tempId: "", counter: counter });
     } else if (card !== this.state.tempCard) {
@@ -90,10 +93,29 @@ class GamePage extends PureComponent {
     }
   };
 
+  handleClose = () => {
+    this.setState({ trigger: false });
+  };
+
   render() {
     console.log(this.state.counter);
     return (
       <div>
+        <Modal show={this.state.trigger} onHide={this.handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Great job</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            Woohoo, you have finished the game. Let's have another one
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={this.handleClose}>
+              <Link style={{ textDecoration: "none", color: "white" }} to="/">
+                Play
+              </Link>
+            </Button>
+          </Modal.Footer>
+        </Modal>
         <div id="header">
           <h2 id="headerCounter">Score:{this.state.counter}</h2>
           <h2>

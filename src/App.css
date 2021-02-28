@@ -138,6 +138,10 @@ h2 {
     height: 90px;
   }
 
+  .backCard {
+    line-height: 90px;
+  }
+
   .card-face {
     width: 100%;
     height: 100%;
@@ -165,6 +169,19 @@ h2 {
 }
 
 @media only screen and (max-width: 550px) {
+  .difficulty h1 {
+    font-size: x-large;
+  }
+
+  .difficulty h2 {
+    font-size: large;
+  }
+
+  .difficulty button {
+    font-size: medium;
+    font-weight: 400;
+  }
+
   .cardParentDiv {
     padding-left: 20px;
     padding-right: 20px;
@@ -181,6 +198,10 @@ h2 {
     height: 100%;
     backface-visibility: hidden;
     position: absolute;
+  }
+
+  .backCard {
+    line-height: 70px;
   }
 
   .card {
